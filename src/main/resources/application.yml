@@ -7,9 +7,9 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url:
-    username:
-    password:
+    url: jdbc:mysql://127.0.0.1:3306/springboot-vue?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: root
+    password: 123456
 
   #整合rabbitmq
   rabbitmq:
@@ -17,8 +17,8 @@ spring:
     ##服务器端口
     port: 5672
     virtual-host: /
-    username:
-    password:
+    username: guest
+    password: guest
     publisher-returns: true #如果对异步消息需要回调必须设置为true
 
 

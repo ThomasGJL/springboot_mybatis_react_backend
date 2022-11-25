@@ -34,7 +34,7 @@ public class OrderController {
         delaySender.sendDelay(order2);
         delaySender.sendDelay(order3);
 
-        return "test--ok";
+        return "sendDelay--ok";
     }
 }
 
