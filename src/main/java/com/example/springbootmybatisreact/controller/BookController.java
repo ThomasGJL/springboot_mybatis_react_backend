@@ -29,16 +29,9 @@ public class BookController {
     BookTagService bookTagService;
 
     @GetMapping("/getBooks")
-    public JSONObject getBooks(){
+    public List<Book> getBooks(){
 
-        List<Book> books = bookService.getBooks();
-
-        JSONObject jsonObject = new JSONObject();
-
-        JSONArray jsonArray = JSONArray.parseArray(JSON.toJSONString(books));
-        jsonObject.put("result", jsonArray);
-
-        return jsonObject;
+        return bookService.getBooks();
 
     }
 
