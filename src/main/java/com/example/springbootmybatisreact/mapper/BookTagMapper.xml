@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.springbootmybatisreact.mapper.BookTagMapper">
+
+    <select id="getAllTags" resultType="BookTag">
+        select * from booktag;
+    </select>
+
+    <select id="getAllBooks" resultMap="BaseMap">
+        select bt.id, tag_name, name, author from booktag bt, book b where bt.id = b.tid
+    </select>
+
+    <resultMap id="BaseMap" type="BookTag">
+        <result property="tag_name" column="tag_name"></result>
+        <collection property="books" ofType="java.util.HashMap">
+            <result property="name" column="name"></result>
+            <result property="author" column="author"></result>
+        </collection>
+    </resultMap>
+
+</mapper>
